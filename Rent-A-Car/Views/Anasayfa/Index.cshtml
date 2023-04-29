@@ -1,18 +1,36 @@
-﻿@* @model TModel *@
-
-@* @{ *@
-@*     Layout = null; *@
-@* } *@
-
+﻿@model List<Rent_A_Car.Models.Araba>
 <!DOCTYPE html>
 
 <html>
 <head>
-    <title>title</title>
+    <title>Anasayfa</title>
 </head>
 <body>
 <div>
     <h1>Anasayfa</h1>
+    
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Plaka</th>
+            <th>Marka</th>
+            <th>Model</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var araba in Model)
+        {
+            <tr>
+                <td>@araba.ArabaID</td>
+                <td>@araba.ArabaPlaka</td>
+                <td>@araba.ArabaMarka</td>
+                <td>@araba.ArabaModel</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
 </div>
 </body>
 </html>

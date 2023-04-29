@@ -7,8 +7,4 @@
         <RootNamespace>Rent_A_Car</RootNamespace>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="Models\" />
-    </ItemGroup>
-
 </Project>
