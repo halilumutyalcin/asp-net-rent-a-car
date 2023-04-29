@@ -11,3 +11,5 @@ app.Run();
 // ilişkin ID, sınıf ve kiralama bedeli bilgisi tutulmalıdır. Bir müşteri aynı anda birçok araç 
 // kiralayabilir. Müşterilerin TCK numarası, adı, adresi ve telefon numarası tutulmalıdır. Her bir 
 // kiralama işlemine ilişkin ise tarih ve ücret bilgisi tutulmalıdır.
+// halil umut yalçın
+//201505018
