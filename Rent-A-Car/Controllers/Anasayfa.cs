@@ -40,12 +40,12 @@ public class Anasayfa : Controller
 
         try
         {
-            String connectionString = "Data Source=ASUS;Initial Catalog=mystore;Integrated Security=True";
+            String connectionString = "Data Source=ASUS;Initial Catalog=cars;Integrated Security=True";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                String sql = "Select * from cars";
+                String sql = "Select * from arabalarTablosu";
                 
                 using (SqlCommand command = new SqlCommand(sql,connection)) 
                 {

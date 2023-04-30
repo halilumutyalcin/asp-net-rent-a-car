@@ -4,34 +4,51 @@
 <html>
 <head>
     <title>Anasayfa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+
 </head>
 <body>
 <div>
-    <h1>Anasayfa</h1>
-    
-<table BORDER="2">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Plaka</th>
-            <th>Marka</th>
-            <th>Model</th>
-            <th>Renk</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var araba in Model)
-        {
+
+    <br />
+    <h2>List of Cars</h2>
+
+    <a class="btn btn-primary btn-sm" href="/Cars/Create">New Car</a>
+
+    <br/>
+    <br/>
+
+    <table class="table" border="2">
+        <thead>
             <tr>
-                <td>@araba.ArabaID</td>
-                <td>@araba.ArabaPlaka</td>
-                <td>@araba.ArabaMarka</td>
-                <td>@araba.ArabaModel</td>
-                <td>@araba.ArabaRenk</td>
+                <th>ID</th>
+                <th>Plaka</th>
+                <th>Marka</th>
+                <th>Model</th>
+                <th>Renk</th>
+                <th>Action</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var araba in Model)
+            {
+                <tr>
+                    <td>@araba.ArabaID</td>
+                    <td>@araba.ArabaPlaka</td>
+                    <td>@araba.ArabaMarka</td>
+                    <td>@araba.ArabaModel</td>
+                    <td>@araba.ArabaRenk</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="/Cars/Edit?@araba.ArabaID">Edit</a>
+                        <a class="btn btn-danger btn-sm" href="/Cars/Delete?@araba.ArabaID">Delete</a>
+                        <a class="btn btn-success btn-sm" href="/Cars/Take?@araba.ArabaID">Take</a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 
 </div>
 </body>
