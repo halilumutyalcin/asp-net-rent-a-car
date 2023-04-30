@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Rent_A_Car.Models;
-
+using System.Data.SqlClient;
 namespace Rent_A_Car.Controllers;
 
 public class Anasayfa : Controller
@@ -31,20 +31,65 @@ public class Anasayfa : Controller
     // }
     // public Anasayfa() { }
 
-    public List<Araba> _liste { get; set; }
+    public List<Araba> _arabalar = new List<Araba>();
 
-    public Anasayfa() {
-        _liste = new List<Araba>()
+    public Anasayfa()
+    {
+
+
+
+        try
         {
-            new Araba(1,"34 ABC 37","Mercedes Benz",arabaModel:"C220"),
-            new Araba(2,"34 DEF 37","Renault",arabaModel:"Captur"),
-            new Araba(3,"34 XYZ 37","Peugeot",arabaModel:"508"),
-        };
+            String connectionString = "Data Source=ASUS;Initial Catalog=mystore;Integrated Security=True";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                String sql = "Select * from cars";
+                
+                using (SqlCommand command = new SqlCommand(sql,connection)) 
+                {
+                    using (SqlDataReader reader = command.ExecuteReader()) 
+                    { 
+                        
+                        while (reader.Read())
+                        {
+
+                            Araba araba = new Araba();
+                            araba.ArabaID = reader.GetInt32(0);
+                            araba.ArabaPlaka = reader.GetString(1);
+                            araba.ArabaMarka = reader.GetString(2);
+                            araba.ArabaModel = reader.GetString(3);
+                            araba.ArabaRenk = reader.GetString(4);
+
+                            _arabalar.Add(araba);
+
+                        }
+
+                    }
+                }
+            }
+
+
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Exception is" + ex.ToString());
+        }
+
+
+        // _liste = new List<Araba>()
+        // {
+        //     new Araba(1,"34 ABC 37","Mercedes Benz",arabaModel:"C220"),
+        //     new Araba(2,"34 DEF 37","Renault",arabaModel:"Captur"),
+        //     new Araba(3,"34 XYZ 37","Peugeot",arabaModel:"508"),
+        // };
     }
 
     public IActionResult Index()
     { 
-        return View(_liste);
+        return View(_arabalar);
     }
     
     
