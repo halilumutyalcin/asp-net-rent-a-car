@@ -2,12 +2,16 @@
 
 public class Araba
 {
-    public int? ArabaID { get; set; }
     public string? ArabaPlaka { get; set; }
     public string? ArabaMarka { get; set; }
     public string? ArabaModel { get; set; }
     public string? ArabaRenk { get; set; }
-    
+
+    public int? ArabaSinifID { get; set; }
+
+    public string? ArabaSinifAdi { get; set; }
+
+    public int? ArabaUcret { get; set; }
     //public Araba(int arabaID, string arabaPlaka,string arabaMarka,string arabaModel)
     //{
     //    this.ArabaID = arabaID;

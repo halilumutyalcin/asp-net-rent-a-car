@@ -15,11 +15,15 @@
     <h2>List of Cars</h2>
 
     <a class="btn btn-primary btn-sm" href="/Cars/Create">New Car</a>
+    <a class="btn btn-primary btn-sm" href="/Cars/Customers">Customers</a>
+    <a class="btn btn-primary btn-sm" href="/Cars/Rents">Rents</a>
+
+
 
     <br/>
     <br/>
 
-    <table class="table" border="2">
+    <table class="table table-striped"  border="2">
         <thead>
             <tr>
                 <th>ID</th>
@@ -27,22 +31,47 @@
                 <th>Marka</th>
                 <th>Model</th>
                 <th>Renk</th>
+                <th>Sınıf ID</th>
+                <th>Sınıf Adı</th>
+                <th>Kiralama Bedeli</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var araba in Model)
+           @* @foreach (var araba in Model)
             {
                 <tr>
-                    <td>@araba.ArabaID</td>
                     <td>@araba.ArabaPlaka</td>
                     <td>@araba.ArabaMarka</td>
                     <td>@araba.ArabaModel</td>
                     <td>@araba.ArabaRenk</td>
+                    <td>@araba.ArabaSinifID</td>
+                    <td>@araba.ArabaSinifAdi</td>
+                    <td>@araba.ArabaUcret</td>
                     <td>
-                        <a class="btn btn-primary btn-sm" href="/Cars/Edit/@araba.ArabaID">Edit</a>
-                        <a class="btn btn-danger btn-sm" href="/Cars/Delete/@araba.ArabaID">Delete</a>
-                        <a class="btn btn-success btn-sm" href="/Cars/Rent/@araba.ArabaID">Rent</a>
+                            <a class="btn btn-primary btn-sm" href="/Cars/Edit/@araba.ArabaPlaka">Edit</a>
+                            <a class="btn btn-danger btn-sm" href="/Cars/Delete/@araba.ArabaPlaka">Delete</a>
+                            <a class="btn btn-success btn-sm" href="/Cars/Rent/@araba.ArabaPlaka">Rent</a>
+
+                    </td>
+                </tr>
+            }*@
+
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                     <tr>
+                        <td>@(i + 1)</td>
+                        <td>@Model[i].ArabaPlaka</td>
+                        <td>@Model[i].ArabaMarka</td>
+                        <td>@Model[i].ArabaModel</td>
+                        <td>@Model[i].ArabaRenk</td>
+                        <td>@Model[i].ArabaSinifID</td>
+                        <td>@Model[i].ArabaSinifAdi</td>
+                        <td>@Model[i].ArabaUcret</td>
+                    <td>
+                            <a class="btn btn-primary btn-sm" href="/Cars/Edit/@Model[i].ArabaPlaka">Edit</a>
+                            <a class="btn btn-danger btn-sm" href="/Cars/Delete/@Model[i].ArabaPlaka">Delete</a>
+                            <a class="btn btn-success btn-sm" href="/Cars/Rent/@Model[i].ArabaPlaka">Rent</a>
 
                     </td>
                 </tr>

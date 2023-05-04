@@ -12,9 +12,9 @@
     <div>
         <form asp-controller="Cars" asp-action="Create" method="post">
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">ID</label>
+                @*<label class="col-sm-3 col-form-label">ID</label>*@
                 <div class="col-sm-6">
-                    <input required type="text" class="form-control" asp-for="@Model.ArabaID" /><br />
+                    @*<input required type="text" class="form-control" asp-for="@Model.ArabaID" /><br />*@
                 </div>
             </div>
             <div class="row mb-3">
@@ -41,6 +41,13 @@
                     <input required type="text" class="form-control" asp-for="@Model.ArabaRenk" /><br />
                 </div>
             </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">SınıfID</label>
+                <div class="col-sm-6">
+                    <input required type="text" class="form-control" asp-for="@Model.ArabaSinifID" /><br />
+                </div>
+            </div>
+
             <div class="row mb-3">
                 <div class="offset-sm-3 col-sm-3 d-grid">
                     <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>

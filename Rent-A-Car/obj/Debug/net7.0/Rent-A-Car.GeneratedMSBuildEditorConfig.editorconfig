@@ -24,6 +24,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/umuty/Documents/GitHub/asp-net-rent-a-car/Rent-A-Car/Views/Cars/Customers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xDdXN0b21lcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umuty/Documents/GitHub/asp-net-rent-a-car/Rent-A-Car/Views/Cars/CustomersCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xDdXN0b21lcnNDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umuty/Documents/GitHub/asp-net-rent-a-car/Rent-A-Car/Views/Cars/CustomersEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xDdXN0b21lcnNFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/umuty/Documents/GitHub/asp-net-rent-a-car/Rent-A-Car/Views/Cars/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,4 +46,8 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/umuty/Documents/GitHub/asp-net-rent-a-car/Rent-A-Car/Views/Cars/Rent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xSZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umuty/Documents/GitHub/asp-net-rent-a-car/Rent-A-Car/Views/Cars/Rents.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xSZW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

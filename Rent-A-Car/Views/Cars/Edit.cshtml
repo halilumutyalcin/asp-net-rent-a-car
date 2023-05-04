@@ -14,12 +14,7 @@
 
     <div>
         <form asp-controller="Cars" asp-action="Edit" method="post">
-            <div class="row mb-3">
-                @*<label class="col-sm-3 col-form-label">ID</label>*@
-                <div class="col-sm-6">
-                    <input required type="hidden" class="form-control" asp-for="@Model.ArabaID" value="@ViewBag.id" /><br />
-                </div>
-            </div>
+
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Plaka</label>
                 <div class="col-sm-6">
@@ -44,6 +39,13 @@
                     <input required type="text" class="form-control" asp-for="@Model.ArabaRenk" value="@ViewBag.renk" /><br />
                 </div>
             </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Sınıf ID</label>
+                <div class="col-sm-6">
+                    <input required type="text" class="form-control" asp-for="@Model.ArabaSinifID" value="@ViewBag.sinifID" /><br />
+                </div>
+            </div>
+
             <div class="row mb-3">
                 <div class="offset-sm-3 col-sm-3 d-grid">
                     <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>

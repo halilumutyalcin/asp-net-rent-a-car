@@ -5,31 +5,6 @@ namespace Rent_A_Car.Controllers;
 
 public class Anasayfa : Controller
 {
-// çalışıyor ve araba cons yok 
-    // public static List<Araba> _arabaListe = new List<Araba>()
-    // {
-    //     new Araba()
-    //     {
-    //         ArabaID = 1,
-    //         ArabaPlaka = "34ABC34",
-    //         ArabaMarka = "Mercedes Benz",
-    //         ArabaModel = "C220"
-    //     },
-    //     new Araba()
-    //     {
-    //         ArabaID = 2,
-    //         ArabaPlaka = "34DEF34",
-    //         ArabaMarka = "Renault",
-    //         ArabaModel = "Captur"
-    //     },
-    //
-    // };
-    // public IActionResult Index()
-    // {
-    //     ViewBag.Arabalar = _arabaListe;
-    //     return View(_arabaListe);
-    // }
-    // public Anasayfa() { }
 
     public List<Araba> _arabalar = new List<Araba>();
 
@@ -40,29 +15,31 @@ public class Anasayfa : Controller
 
         try
         {
-            String connectionString = "Data Source=ASUS;Initial Catalog=cars;Integrated Security=True";
+            String connectionString = "Data Source=ASUS;Initial Catalog=db;Integrated Security=True";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                String sql = "Select * from arabalarTablosu";
+                String sql = "Select * from araba";
                 
                 using (SqlCommand command = new SqlCommand(sql,connection)) 
                 {
                     using (SqlDataReader reader = command.ExecuteReader()) 
-                    { 
-                        
+                    {
+
                         while (reader.Read())
                         {
 
-                            Araba araba = new Araba();
-                            araba.ArabaID = reader.GetInt32(0);
-                            araba.ArabaPlaka = reader.GetString(1);
-                            araba.ArabaMarka = reader.GetString(2);
-                            araba.ArabaModel = reader.GetString(3);
-                            araba.ArabaRenk = reader.GetString(4);
-
-                            _arabalar.Add(araba);
+                            Araba okunanAraba = new Araba();
+                            okunanAraba.ArabaPlaka = reader.GetString(0);
+                            okunanAraba.ArabaMarka = reader.GetString(1);
+                            okunanAraba.ArabaModel = reader.GetString(2);
+                            okunanAraba.ArabaRenk = reader.GetString(3);
+                            okunanAraba.ArabaSinifID = reader.GetInt32(4);
+                            okunanAraba.ArabaSinifAdi = reader.GetString(5);
+                            okunanAraba.ArabaUcret = reader.GetInt32(6);
+                            Console.WriteLine(okunanAraba);
+                            _arabalar.Add(okunanAraba);
 
                         }
 
@@ -79,12 +56,6 @@ public class Anasayfa : Controller
         }
 
 
-        // _liste = new List<Araba>()
-        // {
-        //     new Araba(1,"34 ABC 37","Mercedes Benz",arabaModel:"C220"),
-        //     new Araba(2,"34 DEF 37","Renault",arabaModel:"Captur"),
-        //     new Araba(3,"34 XYZ 37","Peugeot",arabaModel:"508"),
-        // };
     }
 
     public IActionResult Index()
