@@ -1,3 +1,7 @@
+using Rent_A_Car.Models;
+using System.Numerics;
+using System.Reflection;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
@@ -11,3 +15,14 @@ app.Run();
 //iliþkin ID, sýnýf ve kiralama bedeli bilgisi tutulmalýdýr. Bir müþteri ayný anda birçok araç 
 //kiralayabilir. Müþterilerin TCK numarasý, adý, adresi ve telefon numarasý tutulmalýdýr. Her bir 
 //kiralama iþlemine iliþkin ise tarih ve ücret bilgisi tutulmalýdýr.
+
+
+//Araçlar(plaka, model, renk, marka, id)
+//Sýnýf(Kiralama bedeli, Id, sýnýf)
+
+//Müþteri(telefon, TC, ad, adres)
+
+//Kirala/tarih, ücret, müþteri TC, araba plaka) I
+
+
+

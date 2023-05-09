@@ -12,11 +12,12 @@
 <div>
 
     <br />
-    <h2>List of Cars</h2>
+    <h2>Arabalar Listesi</h2>
 
-    <a class="btn btn-primary btn-sm" href="/Cars/Create">New Car</a>
-    <a class="btn btn-primary btn-sm" href="/Cars/Customers">Customers</a>
-    <a class="btn btn-primary btn-sm" href="/Cars/Rents">Rents</a>
+    <a class="btn btn-primary btn-sm" href="/Cars/Create">Yeni Araba Ekle</a>
+    <a class="btn btn-primary btn-sm" href="/Cars/Customers">Müşteriler</a>
+    <a class="btn btn-primary btn-sm" href="/Cars/Rents">Kiralamalar</a>
+    <a class="btn btn-primary btn-sm" href="/Cars/Sınıf">Sınıflar</a>
 
 
 
@@ -26,15 +27,13 @@
     <table class="table table-striped"  border="2">
         <thead>
             <tr>
-                <th>ID</th>
+                @*<th>ID</th>*@
                 <th>Plaka</th>
                 <th>Marka</th>
                 <th>Model</th>
                 <th>Renk</th>
                 <th>Sınıf ID</th>
-                <th>Sınıf Adı</th>
-                <th>Kiralama Bedeli</th>
-                <th>Action</th>
+                <th>Aksiyon</th>
             </tr>
         </thead>
         <tbody>
@@ -60,18 +59,17 @@
             @for (int i = 0; i < Model.Count; i++)
             {
                      <tr>
-                        <td>@(i + 1)</td>
+                        @*<td>@(i + 1)</td>*@
                         <td>@Model[i].ArabaPlaka</td>
                         <td>@Model[i].ArabaMarka</td>
                         <td>@Model[i].ArabaModel</td>
                         <td>@Model[i].ArabaRenk</td>
                         <td>@Model[i].ArabaSinifID</td>
-                        <td>@Model[i].ArabaSinifAdi</td>
-                        <td>@Model[i].ArabaUcret</td>
+
                     <td>
-                            <a class="btn btn-primary btn-sm" href="/Cars/Edit/@Model[i].ArabaPlaka">Edit</a>
-                            <a class="btn btn-danger btn-sm" href="/Cars/Delete/@Model[i].ArabaPlaka">Delete</a>
-                            <a class="btn btn-success btn-sm" href="/Cars/Rent/@Model[i].ArabaPlaka">Rent</a>
+                            <a class="btn btn-primary btn-sm" href="/Cars/Edit/@Model[i].ArabaPlaka">Düzenle</a>
+                            <a class="btn btn-danger btn-sm" href="/Cars/Delete/@Model[i].ArabaPlaka">Sil</a>
+                            <a class="btn btn-success btn-sm" href="/Cars/Rent/@Model[i].ArabaPlaka">Kirala</a>
 
                     </td>
                 </tr>

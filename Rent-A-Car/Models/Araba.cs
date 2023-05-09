@@ -8,10 +8,6 @@ public class Araba
     public string? ArabaRenk { get; set; }
 
     public int? ArabaSinifID { get; set; }
-
-    public string? ArabaSinifAdi { get; set; }
-
-    public int? ArabaUcret { get; set; }
     //public Araba(int arabaID, string arabaPlaka,string arabaMarka,string arabaModel)
     //{
     //    this.ArabaID = arabaID;

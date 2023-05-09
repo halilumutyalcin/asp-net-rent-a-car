@@ -36,8 +36,6 @@ public class Anasayfa : Controller
                             okunanAraba.ArabaModel = reader.GetString(2);
                             okunanAraba.ArabaRenk = reader.GetString(3);
                             okunanAraba.ArabaSinifID = reader.GetInt32(4);
-                            okunanAraba.ArabaSinifAdi = reader.GetString(5);
-                            okunanAraba.ArabaUcret = reader.GetInt32(6);
                             Console.WriteLine(okunanAraba);
                             _arabalar.Add(okunanAraba);
 
