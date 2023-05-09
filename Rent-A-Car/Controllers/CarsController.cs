@@ -16,7 +16,6 @@ namespace Rent_A_Car.Controllers
         }
 
 
-
         [HttpPost]
         public IActionResult Create(Araba model) 
         {
@@ -506,7 +505,7 @@ namespace Rent_A_Car.Controllers
 
         public IActionResult CustomersDelete(long id)
         {
-            Console.WriteLine(id);
+
             try
             {
                 String connectionString = "Data Source=ASUS;Initial Catalog=db;Integrated Security=True";
@@ -942,7 +941,7 @@ namespace Rent_A_Car.Controllers
                 {
 
                     connection.Open();
-                    String sql = "UPDATE sınıf SET kiralama_bedeli=@ucret sınıf=@sınıf  WHERE id=@id";
+                    String sql = "UPDATE sınıf SET kiralama_bedeli=@ucret,sınıf=@sınıf  WHERE id=@id";
 
                     Console.WriteLine(sql);
                     using (SqlCommand command = new SqlCommand(sql, connection))
@@ -995,8 +994,6 @@ namespace Rent_A_Car.Controllers
 
 
         #endregion 
-
-
 
 
 

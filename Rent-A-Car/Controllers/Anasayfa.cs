@@ -11,8 +11,6 @@ public class Anasayfa : Controller
     public Anasayfa()
     {
 
-
-
         try
         {
             String connectionString = "Data Source=ASUS;Initial Catalog=db;Integrated Security=True";
